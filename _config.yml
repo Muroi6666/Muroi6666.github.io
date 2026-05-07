@@ -1,7 +1,11 @@
 title: Dongyoung Study Log
 description: Personal Study Blog
 
+repository: Muroi6666/Muroi6666.github.io
+
 remote_theme: marella/jekyll-theme-documentation
 
 plugins:
   - jekyll-remote-theme
+  - jekyll-seo-tag
+  - jekyll-github-metadata
