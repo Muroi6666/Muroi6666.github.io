@@ -10,7 +10,7 @@ layout: default
 
 ## Study List
 
-- [C언어 공부](./c-language)
+- [C언어 공부](./C_Grammer)
 
 ## Python
 
