@@ -9,4 +9,3 @@ layout: default
 ## Study List
 
 - [포인터](./pointer.md)
-)
