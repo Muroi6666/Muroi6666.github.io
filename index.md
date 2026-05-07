@@ -11,3 +11,7 @@ layout: default
 ## Study List
 
 - [C언어 공부](./c-language)
+
+## Python
+
+- [Python 폴더](./python)
