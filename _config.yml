@@ -1,0 +1,7 @@
+title: Dongyoung Study Log
+description: Personal Study Blog
+
+remote_theme: marella/jekyll-theme-documentation
+
+plugins:
+  - jekyll-remote-theme
