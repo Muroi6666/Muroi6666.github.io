@@ -8,4 +8,4 @@ layout: default
 
 ## Study List
 
-- [포인터](./pointer.md)
+- [포인터](./pointer.html)
