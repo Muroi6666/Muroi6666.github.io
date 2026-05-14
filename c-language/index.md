@@ -10,4 +10,4 @@ title: C Language Study
 ## Study List
 
 - [포인터](./pointer.html)
-- [변수 범위 Variable Scope](./Variable%20Scope.html)
+- [변수 범위 Variable Scope](./Variable_Scope.html)

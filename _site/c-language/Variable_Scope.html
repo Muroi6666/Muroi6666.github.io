@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>C언어 변수 사용 영역 | Dongyoung Study Log</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="C언어 변수 사용 영역" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Personal Study Blog" />
+<meta property="og:description" content="Personal Study Blog" />
+<link rel="canonical" href="http://localhost:4000/c-language/Variable_Scope.html" />
+<meta property="og:url" content="http://localhost:4000/c-language/Variable_Scope.html" />
+<meta property="og:site_name" content="Dongyoung Study Log" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="C언어 변수 사용 영역" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Personal Study Blog","headline":"C언어 변수 사용 영역","url":"http://localhost:4000/c-language/Variable_Scope.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/app.css?v=284dfdffaa144c7d812ac896ca6db67a706d0bd4">
+  </head>
+  <body>
+    <header class="bg-gray-dark py-3 f4">
+  <div class="container-xl">
+    <a class="text-white" href="http://localhost:4000/">Dongyoung Study Log</a>
+    <a class="text-white float-right" href="https://github.com/Muroi6666/Muroi6666.github.io">GitHub</a>
+  </div>
+</header>
+
+
+    <div class="container-xl">
+      <div class="d-xl-none py-3">
+        
+
+
+
+        
+
+
+<nav class="sidebar">
+  <div class="sidebar-inner">
+    <details >
+      <summary class="mb-2">Contents</summary>
+      <ul class="toc">
+  <li><a href="#변수-사용-영역">변수 사용 영역</a>
+    <ul>
+      <li><a href="#지역-변수">지역 변수</a></li>
+      <li><a href="#예제-코드">예제 코드</a></li>
+      <li><a href="#실행-결과">실행 결과</a></li>
+      <li><a href="#설명">설명</a></li>
+    </ul>
+  </li>
+</ul>
+
+    </details>
+  </div>
+</nav>
+
+
+      </div>
+      <div class="d-xl-flex flex-items-stretch">
+        <div class="toc-col sidebar-col d-none d-xl-block">
+          
+
+
+<nav class="sidebar">
+  <div class="sidebar-inner">
+    <details open>
+      <summary class="mb-2">Contents</summary>
+      <ul class="toc">
+  <li><a href="#변수-사용-영역">변수 사용 영역</a>
+    <ul>
+      <li><a href="#지역-변수">지역 변수</a></li>
+      <li><a href="#예제-코드">예제 코드</a></li>
+      <li><a href="#실행-결과">실행 결과</a></li>
+      <li><a href="#설명">설명</a></li>
+    </ul>
+  </li>
+</ul>
+
+    </details>
+  </div>
+</nav>
+
+
+        </div>
+        <main class="content-col flex-item-equal min-width-0 markdown-body">
+          <h1 id="c언어-공부">C언어 공부</h1>
+
+<h2 id="변수-사용-영역">변수 사용 영역</h2>
+
+<p>변수는 선언 위치와 방법에 다라 다양한 특징을 가집니다.
+변수의 특징을 이해하고 필요한 곳에 적재적소로 사용하면 메모리를 절약할 수 있고 신뢰성있는 코드를 만들 수 있습니다.</p>
+
+<p>크게</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">지역 변수(Local Variable)</code></li>
+  <li><code class="language-plaintext highlighter-rouge">전역 변수(Global Variable)</code></li>
+  <li><code class="language-plaintext highlighter-rouge">정적 변수(Static Variable)</code></li>
+  <li><code class="language-plaintext highlighter-rouge">레지스터 변수(Register Variable)</code></li>
+</ul>
+
+<p>로 나뉘어집니다.</p>
+
+<hr />
+<h3 id="지역-변수">지역 변수</h3>
+
+<p>우리가 평소에 배우던 변수는 모두 지역 변수(local variable)입니다. 지역 변수는 범위가 함수 내, 즉 일정 지역에서만 사용하는 변수입니다. “auto”라는 예약어와 함께 사용하여 지역변수를 선언합니다. “auto” 예약어는 생략이 가능</p>
+
+<h3 id="예제-코드">예제 코드</h3>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span>
+<span class="kt">void</span> <span class="nf">sum</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">auto</span> <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">sum</span><span class="p">();</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"main함수 a : %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">a</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">sum</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+
+    <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
+
+    <span class="n">printf</span><span class="p">(</span><span class="s">"sum함수 a : %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">a</span><span class="p">);</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="실행-결과">실행 결과</h3>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sum함수 a : 5
+main함수 a : 0
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="설명">설명</h3>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">main()</code> 함수의 <code class="language-plaintext highlighter-rouge">a</code>와 <code class="language-plaintext highlighter-rouge">sum()</code> 함수의 <code class="language-plaintext highlighter-rouge">a</code>는 서로 다른 지역 변수이다.</li>
+  <li>지역 변수는 선언된 함수 내부에서만 사용할 수 있다.</li>
+  <li>함수가 종료되면 지역 변수는 메모리에서 제거된다.</li>
+</ul>
+
+        </main>
+        <div class="navigation-col sidebar-col d-none d-xl-block">
+          
+
+
+
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer d-flex flex-items-center text-center bg-gray-light text-gray">
+  <div class="container-xl">
+    <a href="https://github.com/Muroi6666/Muroi6666.github.io">Dongyoung Study Log</a>
+    is maintained by
+    <a href="https://github.com/Muroi6666">Muroi6666</a>.
+  </div>
+</footer>
+
+
+    <script src="/assets/js/app.js"></script>
+    <script>anchors.add();</script>
+    
+  </body>
+</html>
