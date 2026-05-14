@@ -11,3 +11,4 @@ title: C Language Study
 
 - [포인터](./pointer.html)
 - [변수 범위 Variable Scope](./Variable_Scope.html)
+- [함수 사이의 데이터 공유](./How_Functions_Share_Data.html)

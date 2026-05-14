@@ -5,9 +5,19 @@
     
       
       {
+        "title": "C언어 함수 사이의 데이터 공유",
+        "url": "/c-language/How_Functions_Share_Data.html",
+        "content": "함수 사이의 데이터 공유C언어에서 함수는 서로 데이터를 주고받으며 동작한다. 데이터를 전달하는 대표적인 방법은 다음 세 가지이다.  값을 복사해서 전달  주소를 전달  주소를 반환1. 값을 복사해서 전달함수에 변수를 전달하면 변수의 실제 값이 복사되어 매개변수로 들어간다. 함수 안에서 매개변수를 바꾸어도 원래 변수는 바뀌지 않는다.예제 코드#include &lt;stdio.h&gt;void changeValue(int num);int main(void){    int a = 10;    printf(\"changeValue 호출 전 a: %d\\n\", a);    changeValue(a);    printf(\"changeValue 호출 후 a: %d\\n\", a);    return 0;}void changeValue(int num){    num = 20;    printf(\"changeValue 함수 안 num: %d\\n\", num);}실행 결과changeValue 호출 전 a: 10changeValue 함수 안 num: 20changeValue 호출 후 a: 10설명  changeValue(a)를 호출하면 a의 값 10이 num으로 복사된다.  함수 안에서 num을 20으로 바꾸어도 a는 그대로 10이다.  원본 값을 보호하고 싶을 때 유용하다.2. 주소를 전달변수의 주소를 함수에 전달하면 함수 안에서 원래 변수의 값을 직접 바꿀 수 있다. 포인터를 사용한다.예제 코드#include &lt;stdio.h&gt;void changeValue(int* num);int main(void){    int a = 10;    printf(\"changeValue 호출 전 a: %d\\n\", a);    changeValue(&amp;a);    printf(\"changeValue 호출 후 a: %d\\n\", a);    return 0;}void changeValue(int* num){    *num = 20;    printf(\"changeValue 함수 안 *num: %d\\n\", *num);}실행 결과changeValue 호출 전 a: 10changeValue 함수 안 *num: 20changeValue 호출 후 a: 20설명  &amp;a는 변수 a의 주소이다.  int* num은 정수형 변수의 주소를 저장하는 포인터이다.  *num = 20;은 num이 가리키는 실제 변수 a의 값을 바꾼다.  함수에서 여러 값을 바꾸거나 원본 데이터를 수정해야 할 때 사용한다.3. 주소를 반환함수가 값이 아니라 주소를 반환할 수도 있다. 이때 반환하는 주소는 함수가 끝난 뒤에도 유효해야 한다.지역 변수의 주소를 반환하면 안 된다. 지역 변수는 함수가 끝나면 사라지기 때문이다.예제 코드#include &lt;stdio.h&gt;int* getNumberAddress(void);int main(void){    int* p = getNumberAddress();    printf(\"반환받은 주소의 값: %d\\n\", *p);    *p = 200;    printf(\"값 변경 후: %d\\n\", *p);    return 0;}int* getNumberAddress(void){    static int number = 100;    return &amp;number;}실행 결과반환받은 주소의 값: 100값 변경 후: 200설명  getNumberAddress()는 int* 자료형을 반환한다.  static int number는 함수가 끝나도 사라지지 않는다.  그래서 &amp;number를 반환해도 main()에서 안전하게 사용할 수 있다.  일반 지역 변수의 주소를 반환하면 위험하다.int* wrongFunction(void){    int number = 100;    return &amp;number;  // 잘못된 코드}위 코드에서 number는 함수가 끝나면 사라진다. 사라진 변수의 주소를 사용하면 예측할 수 없는 문제가 생긴다.핵심 정리            방식      함수 안에서 원본 변경      사용 방법                  값을 복사해서 전달      불가능      changeValue(a)              주소를 전달      가능      changeValue(&amp;a)              주소를 반환      가능하지만 주의 필요      int* p = getNumberAddress()      값을 복사해서 전달하면 안전하지만 원본을 바꿀 수 없다. 주소를 전달하면 원본을 바꿀 수 있지만 포인터를 정확히 사용해야 한다. 주소를 반환할 때는 함수가 끝난 뒤에도 살아 있는 변수의 주소만 반환해야 한다."
+      }
+      
+    
+  
+    
+      ,
+      {
         "title": "C언어 변수 사용 영역",
         "url": "/c-language/Variable_Scope.html",
-        "content": "C언어 공부변수 사용 영역변수는 선언 위치와 방법에 다라 다양한 특징을 가집니다.변수의 특징을 이해하고 필요한 곳에 적재적소로 사용하면 메모리를 절약할 수 있고 신뢰성있는 코드를 만들 수 있습니다.크게  지역 변수(Local Variable)  전역 변수(Global Variable)  정적 변수(Static Variable)  레지스터 변수(Register Variable)로 나뉘어집니다.지역 변수우리가 평소에 배우던 변수는 모두 지역 변수(local variable)입니다. 지역 변수는 범위가 함수 내, 즉 일정 지역에서만 사용하는 변수입니다. “auto”라는 예약어와 함께 사용하여 지역변수를 선언합니다. “auto” 예약어는 생략이 가능예제 코드#include&lt;stdio.h&gt;void sum(void);int main(){    auto int a = 0;    sum();    printf(\"main함수 a : %d\\n\", a);}void sum(void){    int a = 0;    int b = 5;    a = a + b;    printf(\"sum함수 a : %d\\n\", a);}실행 결과sum함수 a : 5main함수 a : 0설명  main() 함수의 a와 sum() 함수의 a는 서로 다른 지역 변수이다.  지역 변수는 선언된 함수 내부에서만 사용할 수 있다.  함수가 종료되면 지역 변수는 메모리에서 제거된다."
+        "content": "C언어 공부변수 사용 영역변수는 선언 위치와 방법에 다라 다양한 특징을 가집니다.변수의 특징을 이해하고 필요한 곳에 적재적소로 사용하면 메모리를 절약할 수 있고 신뢰성있는 코드를 만들 수 있습니다.크게  지역 변수(Local Variable)  전역 변수(Global Variable)  정적 변수(Static Variable)  레지스터 변수(Register Variable)로 나뉘어집니다.지역 변수우리가 평소에 배우던 변수는 모두 지역 변수(local variable)입니다. 지역 변수는 범위가 함수 내, 즉 일정 지역에서만 사용하는 변수입니다. “auto”라는 예약어와 함께 사용하여 지역변수를 선언합니다. “auto” 예약어는 생략이 가능예제 코드#include&lt;stdio.h&gt;void sum(void);int main(){    auto int a = 0;    sum();    printf(\"main함수 a : %d\\n\", a);}void sum(void){    int a = 0;    int b = 5;    a = a + b;    printf(\"sum함수 a : %d\\n\", a);}실행 결과sum함수 a : 5main함수 a : 0설명  main() 함수의 a와 sum() 함수의 a는 서로 다른 지역 변수이다.  지역 변수는 선언된 함수 내부에서만 사용할 수 있다.  함수가 종료되면 지역 변수는 메모리에서 제거된다.지역 변수 특징  지역 변수는 사용 범위가 블록 내부로 제한되므로 다른 함수에서는 사용할 수 없습니다.  지역 변수는 이름이 같아도 선언된 함수가 다르면 각각 독립된 저장 공간을 갖습니다.지역 변수 장점  메모리를 효율적으로 사용  디버깅에 유리블록 안에서 사용하는 지역 변수 예제코드#include&lt;stdio.h&gt;int main(void){    int a = 10, b = 20;    printf(\"교환 전 a와 b의 값 : %d, %d\\n\", a, b);    {        int imsi;        imsi = a;        a = b;        b = imsi;    }    printf(\"교환 후 a와 b의 값 : %d, %d\\n\", a, b);    return 0;}설명  지역 변수는 보통 함수 안에서 선언한 후 함수 끝까지 사용하지만 선언 위치에 따라 사용 범위가 달라질 수 있습니다.  지금 사용하고 있는 main또한 main()함수입니다.전역 변수"
       }
       
     
@@ -37,7 +47,7 @@
       {
         "title": "C Language Study",
         "url": "/c-language/",
-        "content": "C Language Study여기는 C언어 공부 내용을 정리하는 공간입니다.Study List  포인터  변수 범위 Variable Scope"
+        "content": "C Language Study여기는 C언어 공부 내용을 정리하는 공간입니다.Study List  포인터  변수 범위 Variable Scope  함수 사이의 데이터 공유"
       }
       
     
