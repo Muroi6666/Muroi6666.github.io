@@ -25,9 +25,9 @@
     
       ,
       {
-        "title": "Dongyoung Study Log",
-        "url": "/",
-        "content": "Dongyoung Study Log  Welcome  안녕하세요.  프로그래밍과 AI 공부 내용을 정리하는 개인 학습 공간입니다.  전체 검색으로 공부 내용 찾아보기Study Categories      C Language    C언어 문법과 예제 코드를 정리합니다.        Python    Python 기초 문법과 강의 요약본을 정리합니다.        Search    정리한 문서에서 키워드를 빠르게 검색합니다.  Tech StackCPythonC#GitHubStudy Goal  기초 프로그래밍 실력 향상  꾸준한 공부 기록 남기기  프로그래밍과 AI 분야 학습LinksGitHub Profile"
+        "title": "C Language Study",
+        "url": "/c-language/",
+        "content": "C Language Study여기는 C언어 공부 내용을 정리하는 공간입니다.Study List  포인터  변수 범위  함수 사이의 데이터 공유"
       }
       
     
@@ -45,9 +45,19 @@
     
       ,
       {
-        "title": "C Language Study",
-        "url": "/c-language/",
-        "content": "C Language Study여기는 C언어 공부 내용을 정리하는 공간입니다.Study List  포인터  변수 범위  함수 사이의 데이터 공유"
+        "title": "Arduino Study",
+        "url": "/arduino/",
+        "content": "Arduino Study아두이노 실습 내용을 혼자 정리하는 공간입니다.실습 목록아직 등록된 실습 문서가 없습니다.정리하면 좋을 내용  LED 켜기와 끄기  버튼 입력 받기  가변저항 값 읽기  조도 센서 사용하기  서보 모터 제어하기  초음파 센서로 거리 측정하기  시리얼 모니터로 값 확인하기실습 기록 양식새 실습 문서를 만들 때는 아래 순서로 정리하면 좋습니다.  실습 목표  사용 부품  회로 연결  예제 코드  실행 결과  알게 된 점"
+      }
+      
+    
+  
+    
+      ,
+      {
+        "title": "Dongyoung Study Log",
+        "url": "/",
+        "content": "Dongyoung Study Log  Welcome  안녕하세요.  프로그래밍과 AI 공부 내용을 정리하는 개인 학습 공간입니다.  전체 검색으로 공부 내용 찾아보기Study Categories      C Language    C언어 문법과 예제 코드를 정리합니다.        Python    Python 기초 문법과 강의 요약본을 정리합니다.        Arduino    아두이노 실습 과정과 예제 코드를 정리합니다.        Search    정리한 문서에서 키워드를 빠르게 검색합니다.  Tech StackCPythonC#GitHubArduinoStudy Goal  기초 프로그래밍 실력 향상  꾸준한 공부 기록 남기기  프로그래밍과 AI 분야 학습LinksGitHub Profile"
       }
       
     
