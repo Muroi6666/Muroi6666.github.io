@@ -1,13 +1,15 @@
 ---
 layout: default
+title: Dongyoung Study Log
 ---
 
 # Dongyoung Study Log
 
-<div style="background:#f3f6f8; padding:24px; border-radius:12px; margin:20px 0;">
+<div style="background:#f3f6f8; padding:24px; border-radius:8px; margin:20px 0;">
   <h2 style="margin-top:0;">Welcome</h2>
   <p>안녕하세요.</p>
-  <p>제가 공부한 내용을 정리하는 공간입니다.</p>
+  <p>프로그래밍과 AI 공부 내용을 정리하는 개인 학습 공간입니다.</p>
+  <p><a href="./search.html">전체 검색으로 공부 내용 찾아보기</a></p>
 </div>
 
 ## Study Categories
@@ -15,16 +17,23 @@ layout: default
 <div style="display:grid; gap:16px; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); margin-top:20px;">
 
 <a href="./c-language" style="text-decoration:none;">
-  <div style="background:#eef2f5; padding:20px; border-radius:12px;">
+  <div style="background:#eef2f5; padding:20px; border-radius:8px;">
     <h3 style="margin-top:0;">C Language</h3>
     <p>C언어 문법과 예제 코드를 정리합니다.</p>
   </div>
 </a>
 
 <a href="./python" style="text-decoration:none;">
-  <div style="background:#eef2f5; padding:20px; border-radius:12px;">
+  <div style="background:#eef2f5; padding:20px; border-radius:8px;">
     <h3 style="margin-top:0;">Python</h3>
-    <p>Python 기초 문법과 공부 내용을 정리합니다.</p>
+    <p>Python 기초 문법과 강의 요약본을 정리합니다.</p>
+  </div>
+</a>
+
+<a href="./search.html" style="text-decoration:none;">
+  <div style="background:#eef2f5; padding:20px; border-radius:8px;">
+    <h3 style="margin-top:0;">Search</h3>
+    <p>정리한 문서에서 키워드를 빠르게 검색합니다.</p>
   </div>
 </a>
 
@@ -58,12 +67,12 @@ GitHub
 
 ## Study Goal
 
-<div style="background:#f3f6f8; padding:20px; border-radius:12px; margin-top:16px;">
+<div style="background:#f3f6f8; padding:20px; border-radius:8px; margin-top:16px;">
 
 <ul>
   <li>기초 프로그래밍 실력 향상</li>
   <li>꾸준한 공부 기록 남기기</li>
-  <li>임베디드 및 AI 분야 학습</li>
+  <li>프로그래밍과 AI 분야 학습</li>
 </ul>
 
 </div>
@@ -80,7 +89,7 @@ display:inline-block;
 padding:12px 20px;
 background:#24292e;
 color:white;
-border-radius:10px;
+border-radius:8px;
 text-decoration:none;
 font-weight:bold;
 ">

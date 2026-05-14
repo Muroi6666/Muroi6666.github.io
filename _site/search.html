@@ -4,18 +4,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>C언어 포인터 | Dongyoung Study Log</title>
+<title>Search | Dongyoung Study Log</title>
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="C언어 포인터" />
+<meta property="og:title" content="Search" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Personal Study Blog" />
 <meta property="og:description" content="Personal Study Blog" />
 <meta property="og:site_name" content="Dongyoung Study Log" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="C언어 포인터" />
+<meta property="twitter:title" content="Search" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"Personal Study Blog","headline":"C언어 포인터","url":"/c-language/pointer.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"Personal Study Blog","headline":"Search","url":"/search.html"}</script>
 <!-- End Jekyll SEO tag -->
 
     <link rel="stylesheet" href="/assets/css/app.css?v=ccbb8b8c299ac83b63031a226ab3c3ef14b56173">
@@ -42,10 +42,7 @@
   <div class="sidebar-inner">
     <details >
       <summary class="mb-2">Contents</summary>
-      <ul class="toc">
-  <li><a href="#포인터">포인터</a></li>
-  <li><a href="#예제-코드">예제 코드</a></li>
-</ul>
+      
 
     </details>
   </div>
@@ -62,10 +59,7 @@
   <div class="sidebar-inner">
     <details open>
       <summary class="mb-2">Contents</summary>
-      <ul class="toc">
-  <li><a href="#포인터">포인터</a></li>
-  <li><a href="#예제-코드">예제 코드</a></li>
-</ul>
+      
 
     </details>
   </div>
@@ -74,28 +68,24 @@
 
         </div>
         <main class="content-col flex-item-equal min-width-0 markdown-body">
-          <h1 id="c언어-공부">C언어 공부</h1>
+          <h1 id="search">Search</h1>
 
-<h2 id="포인터">포인터</h2>
+<p>공부한 내용에서 원하는 키워드를 검색할 수 있습니다.</p>
 
-<p>포인터는 메모리 주소를 저장하는 변수이다.</p>
+<div class="search-box" style="margin: 20px 0;">
+  <label for="search-input" style="display:block; font-weight:700; margin-bottom:8px;">검색어</label>
+  <input id="search-input" type="search" placeholder="예: 리스트, for, 포인터, readline" autocomplete="off" style="width:100%; max-width:680px; padding:12px 14px; border:1px solid #d0d7de; border-radius:8px; font-size:16px;" />
+</div>
 
-<hr />
+<p id="search-count" style="color:#57606a;"></p>
+<div id="search-results"></div>
 
-<h2 id="예제-코드">예제 코드</h2>
+<script>
+  window.SEARCH_INDEX_URL = "/search.json";
+</script>
 
-<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
-</span>
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
-    <span class="kt">int</span><span class="o">*</span> <span class="n">p</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">;</span>
+<script src="/assets/js/search.js"></script>
 
-    <span class="n">printf</span><span class="p">(</span><span class="s">"%d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="o">*</span><span class="n">p</span><span class="p">);</span>
-
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
 
         </main>
         <div class="navigation-col sidebar-col d-none d-xl-block">

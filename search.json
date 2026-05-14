@@ -1,0 +1,18 @@
+---
+layout: null
+---
+[
+  {% assign searchable_pages = site.pages | where_exp: "page", "page.path contains '.md'" %}
+  {% assign first = true %}
+  {% for page in searchable_pages %}
+    {% unless page.path contains 'search.md' %}
+      {% unless first %},{% endunless %}
+      {
+        "title": {{ page.title | default: page.name | replace: ".md", "" | jsonify }},
+        "url": {{ page.url | relative_url | jsonify }},
+        "content": {{ page.content | markdownify | strip_html | strip_newlines | jsonify }}
+      }
+      {% assign first = false %}
+    {% endunless %}
+  {% endfor %}
+]

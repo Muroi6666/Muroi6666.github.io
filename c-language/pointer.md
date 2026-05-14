@@ -1,5 +1,6 @@
 ---
 layout: default
+title: C언어 포인터
 ---
 
 # C언어 공부

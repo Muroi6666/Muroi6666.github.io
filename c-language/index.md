@@ -1,10 +1,11 @@
 ---
 layout: default
+title: C Language Study
 ---
 
 # C Language Study
 
-여기는 C언어 공부 공간입니다 😄
+여기는 C언어 공부 내용을 정리하는 공간입니다.
 
 ## Study List
 
