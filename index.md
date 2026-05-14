@@ -29,3 +29,62 @@ layout: default
 </a>
 
 </div>
+
+---
+
+## Tech Stack
+
+<div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:16px;">
+
+<span style="background:#dbeafe; padding:10px 16px; border-radius:999px; font-weight:bold;">
+C
+</span>
+
+<span style="background:#fef3c7; padding:10px 16px; border-radius:999px; font-weight:bold;">
+Python
+</span>
+
+<span style="background:#ede9fe; padding:10px 16px; border-radius:999px; font-weight:bold;">
+C#
+</span>
+
+<span style="background:#dcfce7; padding:10px 16px; border-radius:999px; font-weight:bold;">
+GitHub
+</span>
+
+</div>
+
+---
+
+## Study Goal
+
+<div style="background:#f3f6f8; padding:20px; border-radius:12px; margin-top:16px;">
+
+<ul>
+  <li>기초 프로그래밍 실력 향상</li>
+  <li>꾸준한 공부 기록 남기기</li>
+  <li>임베디드 및 AI 분야 학습</li>
+</ul>
+
+</div>
+
+---
+
+## Links
+
+<div style="margin-top:20px;">
+
+<a href="https://github.com/Muroi6666"
+style="
+display:inline-block;
+padding:12px 20px;
+background:#24292e;
+color:white;
+border-radius:10px;
+text-decoration:none;
+font-weight:bold;
+">
+GitHub Profile
+</a>
+
+</div>
