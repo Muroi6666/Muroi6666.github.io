@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Dongyoung Study Log | Personal Study Blog</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Dongyoung Study Log" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Personal Study Blog" />
+<meta property="og:description" content="Personal Study Blog" />
+<link rel="canonical" href="http://localhost:4000/python/week4.html" />
+<meta property="og:url" content="http://localhost:4000/python/week4.html" />
+<meta property="og:site_name" content="Dongyoung Study Log" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Dongyoung Study Log" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Personal Study Blog","headline":"Dongyoung Study Log","url":"http://localhost:4000/python/week4.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/app.css?v=284dfdffaa144c7d812ac896ca6db67a706d0bd4">
+  </head>
+  <body>
+    <header class="bg-gray-dark py-3 f4">
+  <div class="container-xl">
+    <a class="text-white" href="http://localhost:4000/">Dongyoung Study Log</a>
+    <a class="text-white float-right" href="https://github.com/Muroi6666/Muroi6666.github.io">GitHub</a>
+  </div>
+</header>
+
+
+    <div class="container-xl">
+      <div class="d-xl-none py-3">
+        
+
+
+
+        
+
+
+<nav class="sidebar">
+  <div class="sidebar-inner">
+    <details >
+      <summary class="mb-2">Contents</summary>
+      <ul class="toc">
+  <li><a href="#1-파일-입출력이란">1. 파일 입출력이란?</a></li>
+  <li><a href="#2-파일-열기-모드">2. 파일 열기 모드</a></li>
+  <li><a href="#3-파일에-내용-쓰기">3. 파일에 내용 쓰기</a></li>
+  <li><a href="#4-readline-함수">4. readline() 함수</a></li>
+  <li><a href="#5-readlines-함수">5. readlines() 함수</a></li>
+  <li><a href="#6-with문으로-파일-다루기">6. with문으로 파일 다루기</a></li>
+  <li><a href="#7-api-요청-예제">7. API 요청 예제</a></li>
+  <li><a href="#8-딕셔너리-값-변경">8. 딕셔너리 값 변경</a></li>
+  <li><a href="#핵심-정리">핵심 정리</a></li>
+</ul>
+
+    </details>
+  </div>
+</nav>
+
+
+      </div>
+      <div class="d-xl-flex flex-items-stretch">
+        <div class="toc-col sidebar-col d-none d-xl-block">
+          
+
+
+<nav class="sidebar">
+  <div class="sidebar-inner">
+    <details open>
+      <summary class="mb-2">Contents</summary>
+      <ul class="toc">
+  <li><a href="#1-파일-입출력이란">1. 파일 입출력이란?</a></li>
+  <li><a href="#2-파일-열기-모드">2. 파일 열기 모드</a></li>
+  <li><a href="#3-파일에-내용-쓰기">3. 파일에 내용 쓰기</a></li>
+  <li><a href="#4-readline-함수">4. readline() 함수</a></li>
+  <li><a href="#5-readlines-함수">5. readlines() 함수</a></li>
+  <li><a href="#6-with문으로-파일-다루기">6. with문으로 파일 다루기</a></li>
+  <li><a href="#7-api-요청-예제">7. API 요청 예제</a></li>
+  <li><a href="#8-딕셔너리-값-변경">8. 딕셔너리 값 변경</a></li>
+  <li><a href="#핵심-정리">핵심 정리</a></li>
+</ul>
+
+    </details>
+  </div>
+</nav>
+
+
+        </div>
+        <main class="content-col flex-item-equal min-width-0 markdown-body">
+          <h1 id="파이썬-4주차-강의-요약">파이썬 4주차 강의 요약</h1>
+
+<h2 id="1-파일-입출력이란">1. 파일 입출력이란?</h2>
+
+<p>파일 입출력은 파이썬 프로그램에서 파일을 만들거나, 파일에 내용을 쓰거나, 파일의 내용을 읽는 작업이다.</p>
+
+<p>파이썬에서는 <code class="language-plaintext highlighter-rouge">open()</code> 함수를 사용해 파일을 다룬다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">파일객체</span> <span class="o">=</span> <span class="nf">open</span><span class="p">(</span><span class="sh">"</span><span class="s">파일이름</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">모드</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">파일객체</span><span class="p">.</span><span class="nf">close</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>파일을 열었다면 작업이 끝난 뒤 <code class="language-plaintext highlighter-rouge">close()</code>로 닫아 주는 것이 좋다.</p>
+
+<h2 id="2-파일-열기-모드">2. 파일 열기 모드</h2>
+
+<p><code class="language-plaintext highlighter-rouge">open()</code> 함수의 두 번째 값에는 파일을 어떤 방식으로 열지 지정한다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>모드</th>
+      <th>의미</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">w</code></td>
+      <td>쓰기 모드. 파일이 없으면 만들고, 있으면 기존 내용을 지운다</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">r</code></td>
+      <td>읽기 모드. 파일을 읽을 때 사용한다</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">a</code></td>
+      <td>추가 모드. 기존 내용 뒤에 새 내용을 추가한다</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">f</span> <span class="o">=</span> <span class="nf">open</span><span class="p">(</span><span class="sh">"</span><span class="s">새파일.txt</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">w</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">f</span><span class="p">.</span><span class="nf">close</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>위 코드는 현재 실행 위치에 <code class="language-plaintext highlighter-rouge">새파일.txt</code> 파일을 만든다.</p>
+
+<p>특정 폴더에 파일을 만들고 싶으면 경로를 함께 적는다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">f</span> <span class="o">=</span> <span class="nf">open</span><span class="p">(</span><span class="sh">"</span><span class="s">C:/아무거나/새파일.txt</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">w</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">f</span><span class="p">.</span><span class="nf">close</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h2 id="3-파일에-내용-쓰기">3. 파일에 내용 쓰기</h2>
+
+<p>파일에 문자열 데이터를 쓰려면 <code class="language-plaintext highlighter-rouge">write()</code> 함수를 사용한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">f</span> <span class="o">=</span> <span class="nf">open</span><span class="p">(</span><span class="sh">"</span><span class="s">C:/아무거나/새파일.txt</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">w</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="sh">"</span><span class="s">%d번째 줄입니다.</span><span class="se">\n</span><span class="sh">"</span> <span class="o">%</span> <span class="n">i</span>
+    <span class="n">f</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="n">f</span><span class="p">.</span><span class="nf">close</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">\n</code>은 줄바꿈 문자이다. 파일에 여러 줄을 저장하고 싶을 때 사용한다.</p>
+
+<p>같은 내용을 화면에 출력하면 다음과 같은 흐름이다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="sh">"</span><span class="s">%d번째 줄입니다.</span><span class="se">\n</span><span class="sh">"</span> <span class="o">%</span> <span class="n">i</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="4-readline-함수">4. <code class="language-plaintext highlighter-rouge">readline()</code> 함수</h2>
+
+<p><code class="language-plaintext highlighter-rouge">readline()</code>은 파일에서 한 줄씩 읽어 오는 함수이다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">f</span> <span class="o">=</span> <span class="nf">open</span><span class="p">(</span><span class="sh">"</span><span class="s">C:/아무거나/새파일.txt</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">r</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="n">line</span> <span class="o">=</span> <span class="n">f</span><span class="p">.</span><span class="nf">readline</span><span class="p">()</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+
+<span class="n">f</span><span class="p">.</span><span class="nf">close</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>위 코드는 파일의 첫 번째 줄만 읽어서 출력한다.</p>
+
+<p>모든 줄을 한 줄씩 읽으려면 <code class="language-plaintext highlighter-rouge">while</code>문과 함께 사용할 수 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">f</span> <span class="o">=</span> <span class="nf">open</span><span class="p">(</span><span class="sh">"</span><span class="s">C:/아무거나/새파일.txt</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">r</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="n">line</span> <span class="o">=</span> <span class="n">f</span><span class="p">.</span><span class="nf">readline</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="p">:</span>
+        <span class="k">break</span>
+
+    <span class="nf">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+
+<span class="n">f</span><span class="p">.</span><span class="nf">close</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">readline()</code>은 더 이상 읽을 줄이 없으면 빈 문자열을 반환한다. 그래서 <code class="language-plaintext highlighter-rouge">if not line:</code> 조건으로 반복을 종료할 수 있다.</p>
+
+<h2 id="5-readlines-함수">5. <code class="language-plaintext highlighter-rouge">readlines()</code> 함수</h2>
+
+<p><code class="language-plaintext highlighter-rouge">readlines()</code>는 파일의 모든 줄을 읽어서 리스트로 반환한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">f</span> <span class="o">=</span> <span class="nf">open</span><span class="p">(</span><span class="sh">"</span><span class="s">C:/아무거나/새파일.txt</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">r</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="n">lines</span> <span class="o">=</span> <span class="n">f</span><span class="p">.</span><span class="nf">readlines</span><span class="p">()</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+
+<span class="n">f</span><span class="p">.</span><span class="nf">close</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>예를 들어 파일에 10줄이 있다면, 각 줄이 리스트의 요소로 들어간다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span>
+    <span class="sh">"</span><span class="s">1번째 줄입니다.</span><span class="se">\n</span><span class="sh">"</span><span class="p">,</span>
+    <span class="sh">"</span><span class="s">2번째 줄입니다.</span><span class="se">\n</span><span class="sh">"</span><span class="p">,</span>
+    <span class="sh">"</span><span class="s">3번째 줄입니다.</span><span class="se">\n</span><span class="sh">"</span>
+<span class="p">]</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">readline()</code>은 한 줄씩 읽고, <code class="language-plaintext highlighter-rouge">readlines()</code>는 전체 줄을 리스트로 읽는다는 차이가 있다.</p>
+
+<h2 id="6-with문으로-파일-다루기">6. <code class="language-plaintext highlighter-rouge">with</code>문으로 파일 다루기</h2>
+
+<p>파일을 열고 닫을 때는 <code class="language-plaintext highlighter-rouge">with</code>문을 사용하면 더 편하다. <code class="language-plaintext highlighter-rouge">with</code>문을 사용하면 작업이 끝난 뒤 파일이 자동으로 닫힌다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="sh">"</span><span class="s">C:/아무거나/새파일.txt</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">w</span><span class="sh">"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="sh">"</span><span class="s">%d번째 줄입니다.</span><span class="se">\n</span><span class="sh">"</span> <span class="o">%</span> <span class="n">i</span>
+        <span class="n">f</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>읽을 때도 같은 방식으로 사용할 수 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="sh">"</span><span class="s">C:/아무거나/새파일.txt</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">r</span><span class="sh">"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="n">f</span><span class="p">.</span><span class="nf">readlines</span><span class="p">()</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="7-api-요청-예제">7. API 요청 예제</h2>
+
+<p>강의 후반에는 <code class="language-plaintext highlighter-rouge">requests</code>, <code class="language-plaintext highlighter-rouge">json</code>, <code class="language-plaintext highlighter-rouge">random</code> 모듈을 사용해 외부 API에서 데이터를 받아오는 예제가 나온다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">requests</span>
+<span class="kn">import</span> <span class="n">json</span>
+<span class="kn">import</span> <span class="n">random</span>
+
+<span class="n">apikey</span> <span class="o">=</span> <span class="sh">"</span><span class="s">발급받은_API_KEY</span><span class="sh">"</span>
+<span class="n">player</span> <span class="o">=</span> <span class="nf">input</span><span class="p">(</span><span class="sh">"</span><span class="s">사용자: </span><span class="sh">"</span><span class="p">)</span>
+<span class="n">query</span> <span class="o">=</span> <span class="n">player</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="sh">"</span><span class="s">https://opendict.korean.go.kr/api/search</span><span class="sh">"</span>
+    <span class="sh">"</span><span class="s">?certkey_no=인증키번호</span><span class="sh">"</span>
+    <span class="sh">"</span><span class="s">&amp;key=</span><span class="sh">"</span> <span class="o">+</span> <span class="n">apikey</span> <span class="o">+</span>
+    <span class="sh">"</span><span class="s">&amp;target_type=search</span><span class="sh">"</span>
+    <span class="sh">"</span><span class="s">&amp;req_type=json</span><span class="sh">"</span>
+    <span class="sh">"</span><span class="s">&amp;part=word</span><span class="sh">"</span>
+    <span class="sh">"</span><span class="s">&amp;sort=popular</span><span class="sh">"</span>
+    <span class="sh">"</span><span class="s">&amp;start=1</span><span class="sh">"</span>
+    <span class="sh">"</span><span class="s">&amp;num=100</span><span class="sh">"</span>
+    <span class="sh">"</span><span class="s">&amp;method=start</span><span class="sh">"</span>
+    <span class="sh">"</span><span class="s">&amp;pos=1</span><span class="sh">"</span>
+    <span class="sh">"</span><span class="s">&amp;q=</span><span class="sh">"</span> <span class="o">+</span> <span class="n">query</span>
+<span class="p">)</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">words</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="nf">loads</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>이 예제의 흐름은 다음과 같다.</p>
+
+<ol>
+  <li>사용자에게 단어를 입력받는다.</li>
+  <li>입력한 단어의 마지막 글자를 가져온다.</li>
+  <li>API 주소를 만들어 요청한다.</li>
+  <li>JSON 형식의 응답을 파이썬 딕셔너리처럼 다룬다.</li>
+  <li>조건에 맞는 단어를 리스트에 모은다.</li>
+  <li><code class="language-plaintext highlighter-rouge">random.choice()</code>로 단어 하나를 골라 출력한다.</li>
+</ol>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">list_a</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">words</span><span class="p">[</span><span class="sh">"</span><span class="s">channel</span><span class="sh">"</span><span class="p">][</span><span class="sh">"</span><span class="s">item</span><span class="sh">"</span><span class="p">])):</span>
+    <span class="n">word</span> <span class="o">=</span> <span class="n">words</span><span class="p">[</span><span class="sh">"</span><span class="s">channel</span><span class="sh">"</span><span class="p">][</span><span class="sh">"</span><span class="s">item</span><span class="sh">"</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="sh">"</span><span class="s">sense</span><span class="sh">"</span><span class="p">][</span><span class="sh">"</span><span class="s">word</span><span class="sh">"</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">word</span><span class="p">.</span><span class="nf">startswith</span><span class="p">(</span><span class="n">query</span><span class="p">):</span>
+        <span class="n">list_a</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">word</span><span class="p">.</span><span class="nf">replace</span><span class="p">(</span><span class="sh">"</span><span class="s">-</span><span class="sh">"</span><span class="p">,</span> <span class="sh">""</span><span class="p">).</span><span class="nf">replace</span><span class="p">(</span><span class="sh">"</span><span class="s">^</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s"> </span><span class="sh">"</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="nf">len</span><span class="p">(</span><span class="n">list_a</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">컴퓨터:</span><span class="sh">"</span><span class="p">,</span> <span class="n">random</span><span class="p">.</span><span class="nf">choice</span><span class="p">(</span><span class="n">list_a</span><span class="p">))</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">컴퓨터: 단어 없음</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>API 키는 외부에 공개하지 않는 것이 좋다. GitHub 같은 공개 저장소에 올릴 때는 실제 키 대신 자리표시자를 사용해야 한다.</p>
+
+<h2 id="8-딕셔너리-값-변경">8. 딕셔너리 값 변경</h2>
+
+<p>딕셔너리는 <code class="language-plaintext highlighter-rouge">Key</code>를 이용해 값을 가져오거나 수정할 수 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dictionary</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="sh">"</span><span class="s">name</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">7D 건조 망고</span><span class="sh">"</span><span class="p">,</span>
+    <span class="sh">"</span><span class="s">type</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">당절임</span><span class="sh">"</span><span class="p">,</span>
+    <span class="sh">"</span><span class="s">ingredient</span><span class="sh">"</span><span class="p">:</span> <span class="p">[</span><span class="sh">"</span><span class="s">망고</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">설탕</span><span class="sh">"</span><span class="p">],</span>
+    <span class="sh">"</span><span class="s">origin</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">필리핀</span><span class="sh">"</span>
+<span class="p">}</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">name:</span><span class="sh">"</span><span class="p">,</span> <span class="n">dictionary</span><span class="p">[</span><span class="sh">"</span><span class="s">name</span><span class="sh">"</span><span class="p">])</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">type:</span><span class="sh">"</span><span class="p">,</span> <span class="n">dictionary</span><span class="p">[</span><span class="sh">"</span><span class="s">type</span><span class="sh">"</span><span class="p">])</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">ingredient:</span><span class="sh">"</span><span class="p">,</span> <span class="n">dictionary</span><span class="p">[</span><span class="sh">"</span><span class="s">ingredient</span><span class="sh">"</span><span class="p">])</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">origin:</span><span class="sh">"</span><span class="p">,</span> <span class="n">dictionary</span><span class="p">[</span><span class="sh">"</span><span class="s">origin</span><span class="sh">"</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p>값을 바꾸려면 기존 <code class="language-plaintext highlighter-rouge">Key</code>에 새 값을 대입한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dictionary</span><span class="p">[</span><span class="sh">"</span><span class="s">name</span><span class="sh">"</span><span class="p">]</span> <span class="o">=</span> <span class="sh">"</span><span class="s">8D 건조 망고</span><span class="sh">"</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">name:</span><span class="sh">"</span><span class="p">,</span> <span class="n">dictionary</span><span class="p">[</span><span class="sh">"</span><span class="s">name</span><span class="sh">"</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p>딕셔너리는 여러 정보를 <code class="language-plaintext highlighter-rouge">Key: Value</code> 형태로 묶어 저장할 때 유용하다.</p>
+
+<h2 id="핵심-정리">핵심 정리</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">open()</code>은 파일을 열 때 사용하는 함수이다.</li>
+  <li><code class="language-plaintext highlighter-rouge">w</code> 모드는 쓰기, <code class="language-plaintext highlighter-rouge">r</code> 모드는 읽기, <code class="language-plaintext highlighter-rouge">a</code> 모드는 추가 모드이다.</li>
+  <li><code class="language-plaintext highlighter-rouge">write()</code>는 파일에 문자열을 쓴다.</li>
+  <li><code class="language-plaintext highlighter-rouge">readline()</code>은 파일을 한 줄씩 읽는다.</li>
+  <li><code class="language-plaintext highlighter-rouge">readlines()</code>는 파일의 모든 줄을 리스트로 읽는다.</li>
+  <li><code class="language-plaintext highlighter-rouge">with open(...) as f:</code>를 사용하면 파일을 자동으로 닫을 수 있다.</li>
+  <li><code class="language-plaintext highlighter-rouge">requests.get()</code>으로 외부 API에 요청을 보낼 수 있다.</li>
+  <li><code class="language-plaintext highlighter-rouge">json.loads()</code>는 JSON 문자열을 파이썬 자료형으로 바꾼다.</li>
+  <li>딕셔너리는 <code class="language-plaintext highlighter-rouge">Key</code>를 사용해 값을 읽고 수정한다.</li>
+</ul>
+
+        </main>
+        <div class="navigation-col sidebar-col d-none d-xl-block">
+          
+
+
+
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer d-flex flex-items-center text-center bg-gray-light text-gray">
+  <div class="container-xl">
+    <a href="https://github.com/Muroi6666/Muroi6666.github.io">Dongyoung Study Log</a>
+    is maintained by
+    <a href="https://github.com/Muroi6666">Muroi6666</a>.
+  </div>
+</footer>
+
+
+    <script src="/assets/js/app.js"></script>
+    <script>anchors.add();</script>
+    
+  </body>
+</html>
