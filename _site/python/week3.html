@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Dongyoung Study Log | Personal Study Blog</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Dongyoung Study Log" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Personal Study Blog" />
+<meta property="og:description" content="Personal Study Blog" />
+<link rel="canonical" href="http://localhost:4000/python/week3.html" />
+<meta property="og:url" content="http://localhost:4000/python/week3.html" />
+<meta property="og:site_name" content="Dongyoung Study Log" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Dongyoung Study Log" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Personal Study Blog","headline":"Dongyoung Study Log","url":"http://localhost:4000/python/week3.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/app.css?v=284dfdffaa144c7d812ac896ca6db67a706d0bd4">
+  </head>
+  <body>
+    <header class="bg-gray-dark py-3 f4">
+  <div class="container-xl">
+    <a class="text-white" href="http://localhost:4000/">Dongyoung Study Log</a>
+    <a class="text-white float-right" href="https://github.com/Muroi6666/Muroi6666.github.io">GitHub</a>
+  </div>
+</header>
+
+
+    <div class="container-xl">
+      <div class="d-xl-none py-3">
+        
+
+
+
+        
+
+
+<nav class="sidebar">
+  <div class="sidebar-inner">
+    <details >
+      <summary class="mb-2">Contents</summary>
+      <ul class="toc">
+  <li><a href="#1-제어문이란">1. 제어문이란?</a></li>
+  <li><a href="#2-if문">2. if문</a></li>
+  <li><a href="#3-비교-연산자">3. 비교 연산자</a></li>
+  <li><a href="#4-if-elif-else">4. if, elif, else</a></li>
+  <li><a href="#5-논리-연산자">5. 논리 연산자</a></li>
+  <li><a href="#6-in-not-in">6. in, not in</a></li>
+  <li><a href="#7-while문">7. while문</a></li>
+  <li><a href="#8-break">8. break</a></li>
+  <li><a href="#9-continue">9. continue</a></li>
+  <li><a href="#10-무한-루프">10. 무한 루프</a></li>
+  <li><a href="#11-for문">11. for문</a></li>
+  <li><a href="#12-for문-활용-예제">12. for문 활용 예제</a></li>
+  <li><a href="#13-for문과-continue">13. for문과 continue</a></li>
+  <li><a href="#14-range-함수">14. range() 함수</a></li>
+  <li><a href="#15-range-활용-예제">15. range() 활용 예제</a></li>
+  <li><a href="#16-함수">16. 함수</a></li>
+  <li><a href="#핵심-정리">핵심 정리</a></li>
+</ul>
+
+    </details>
+  </div>
+</nav>
+
+
+      </div>
+      <div class="d-xl-flex flex-items-stretch">
+        <div class="toc-col sidebar-col d-none d-xl-block">
+          
+
+
+<nav class="sidebar">
+  <div class="sidebar-inner">
+    <details open>
+      <summary class="mb-2">Contents</summary>
+      <ul class="toc">
+  <li><a href="#1-제어문이란">1. 제어문이란?</a></li>
+  <li><a href="#2-if문">2. if문</a></li>
+  <li><a href="#3-비교-연산자">3. 비교 연산자</a></li>
+  <li><a href="#4-if-elif-else">4. if, elif, else</a></li>
+  <li><a href="#5-논리-연산자">5. 논리 연산자</a></li>
+  <li><a href="#6-in-not-in">6. in, not in</a></li>
+  <li><a href="#7-while문">7. while문</a></li>
+  <li><a href="#8-break">8. break</a></li>
+  <li><a href="#9-continue">9. continue</a></li>
+  <li><a href="#10-무한-루프">10. 무한 루프</a></li>
+  <li><a href="#11-for문">11. for문</a></li>
+  <li><a href="#12-for문-활용-예제">12. for문 활용 예제</a></li>
+  <li><a href="#13-for문과-continue">13. for문과 continue</a></li>
+  <li><a href="#14-range-함수">14. range() 함수</a></li>
+  <li><a href="#15-range-활용-예제">15. range() 활용 예제</a></li>
+  <li><a href="#16-함수">16. 함수</a></li>
+  <li><a href="#핵심-정리">핵심 정리</a></li>
+</ul>
+
+    </details>
+  </div>
+</nav>
+
+
+        </div>
+        <main class="content-col flex-item-equal min-width-0 markdown-body">
+          <h1 id="파이썬-3주차-강의-요약">파이썬 3주차 강의 요약</h1>
+
+<h2 id="1-제어문이란">1. 제어문이란?</h2>
+
+<p>제어문은 프로그램의 흐름을 제어하는 문장이다. 조건에 따라 실행할 코드를 선택하거나, 같은 코드를 여러 번 반복할 때 사용한다.</p>
+
+<p>파이썬에서 자주 사용하는 제어문은 다음과 같다.</p>
+
+<ul>
+  <li>조건문: <code class="language-plaintext highlighter-rouge">if</code>, <code class="language-plaintext highlighter-rouge">elif</code>, <code class="language-plaintext highlighter-rouge">else</code></li>
+  <li>반복문: <code class="language-plaintext highlighter-rouge">while</code>, <code class="language-plaintext highlighter-rouge">for</code></li>
+  <li>반복 흐름 제어: <code class="language-plaintext highlighter-rouge">break</code>, <code class="language-plaintext highlighter-rouge">continue</code></li>
+</ul>
+
+<h2 id="2-if문">2. <code class="language-plaintext highlighter-rouge">if</code>문</h2>
+
+<p><code class="language-plaintext highlighter-rouge">if</code>문은 조건이 참일 때만 특정 코드를 실행한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="n">조건문</span><span class="p">:</span>
+    <span class="n">실행할</span> <span class="n">문장</span>
+</code></pre></div></div>
+
+<p>파이썬에서는 들여쓰기가 매우 중요하다. 같은 <code class="language-plaintext highlighter-rouge">if</code>문 안에서 실행될 문장들은 들여쓰기 위치가 같아야 한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">양수입니다.</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="3-비교-연산자">3. 비교 연산자</h2>
+
+<p>조건문에서는 값을 비교하기 위해 비교 연산자를 자주 사용한다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>연산자</th>
+      <th>의미</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">x &lt; y</code></td>
+      <td>x가 y보다 작다</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">x &gt; y</code></td>
+      <td>x가 y보다 크다</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">x == y</code></td>
+      <td>x와 y가 같다</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">x != y</code></td>
+      <td>x와 y가 같지 않다</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">x &gt;= y</code></td>
+      <td>x가 y보다 크거나 같다</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">x &lt;= y</code></td>
+      <td>x가 y보다 작거나 같다</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">)</span>   <span class="c1"># True
+</span><span class="nf">print</span><span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">)</span>  <span class="c1"># False
+</span><span class="nf">print</span><span class="p">(</span><span class="n">x</span> <span class="o">!=</span> <span class="n">y</span><span class="p">)</span>  <span class="c1"># True
+</span></code></pre></div></div>
+
+<h2 id="4-if-elif-else">4. <code class="language-plaintext highlighter-rouge">if</code>, <code class="language-plaintext highlighter-rouge">elif</code>, <code class="language-plaintext highlighter-rouge">else</code></h2>
+
+<p>조건이 여러 개일 때는 <code class="language-plaintext highlighter-rouge">elif</code>와 <code class="language-plaintext highlighter-rouge">else</code>를 함께 사용할 수 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="n">조건1</span><span class="p">:</span>
+    <span class="n">조건1이</span> <span class="n">참일</span> <span class="n">때</span> <span class="n">실행</span>
+<span class="k">elif</span> <span class="n">조건2</span><span class="p">:</span>
+    <span class="n">조건1은</span> <span class="n">거짓이고</span> <span class="n">조건2가</span> <span class="n">참일</span> <span class="n">때</span> <span class="n">실행</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">위</span> <span class="n">조건들이</span> <span class="n">모두</span> <span class="n">거짓일</span> <span class="n">때</span> <span class="n">실행</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">elif</code>는 여러 번 사용할 수 있지만, <code class="language-plaintext highlighter-rouge">else</code>는 마지막에 한 번만 사용할 수 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">score</span> <span class="o">=</span> <span class="mi">75</span>
+
+<span class="k">if</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">90</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">A</span><span class="sh">"</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">80</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">B</span><span class="sh">"</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">70</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">C</span><span class="sh">"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">D</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="5-논리-연산자">5. 논리 연산자</h2>
+
+<p>논리 연산자는 여러 조건을 연결하거나 조건의 참과 거짓을 반대로 바꿀 때 사용한다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>연산자</th>
+      <th>의미</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">and</code></td>
+      <td>두 조건이 모두 참이면 <code class="language-plaintext highlighter-rouge">True</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">or</code></td>
+      <td>두 조건 중 하나라도 참이면 <code class="language-plaintext highlighter-rouge">True</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">not</code></td>
+      <td>참과 거짓을 반대로 바꿈</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">y</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>   <span class="c1"># True
+</span><span class="nf">print</span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>    <span class="c1"># True
+</span><span class="nf">print</span><span class="p">(</span><span class="ow">not</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">)</span>         <span class="c1"># False
+</span></code></pre></div></div>
+
+<h2 id="6-in-not-in">6. <code class="language-plaintext highlighter-rouge">in</code>, <code class="language-plaintext highlighter-rouge">not in</code></h2>
+
+<p><code class="language-plaintext highlighter-rouge">in</code>과 <code class="language-plaintext highlighter-rouge">not in</code>은 어떤 값이 리스트, 튜플, 문자열 안에 있는지 확인할 때 사용한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="mi">1</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>        <span class="c1"># True
+</span><span class="nf">print</span><span class="p">(</span><span class="mi">1</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>    <span class="c1"># False
+</span><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">a</span><span class="sh">"</span> <span class="ow">in</span> <span class="sh">"</span><span class="s">apple</span><span class="sh">"</span><span class="p">)</span>        <span class="c1"># True
+</span></code></pre></div></div>
+
+<p>사용 가능한 형태는 다음과 같다.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">x in 리스트</code></li>
+  <li><code class="language-plaintext highlighter-rouge">x not in 리스트</code></li>
+  <li><code class="language-plaintext highlighter-rouge">x in 튜플</code></li>
+  <li><code class="language-plaintext highlighter-rouge">x not in 튜플</code></li>
+  <li><code class="language-plaintext highlighter-rouge">x in 문자열</code></li>
+  <li><code class="language-plaintext highlighter-rouge">x not in 문자열</code></li>
+</ul>
+
+<h2 id="7-while문">7. <code class="language-plaintext highlighter-rouge">while</code>문</h2>
+
+<p><code class="language-plaintext highlighter-rouge">while</code>문은 조건이 참인 동안 코드를 반복 실행한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">while</span> <span class="n">조건문</span><span class="p">:</span>
+    <span class="n">실행할</span> <span class="n">문장</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">jump</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="n">jump</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="n">jump</span> <span class="o">=</span> <span class="n">jump</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">점프를 %d번 했습니다.</span><span class="sh">"</span> <span class="o">%</span> <span class="n">jump</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">jump</span> <span class="o">==</span> <span class="mi">10</span><span class="p">:</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">점프 10번 성공했습니다.</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">while</code>문에서는 조건이 계속 참이면 반복이 끝나지 않으므로, 반복을 멈출 수 있는 조건을 잘 만들어야 한다.</p>
+
+<h2 id="8-break">8. <code class="language-plaintext highlighter-rouge">break</code></h2>
+
+<p><code class="language-plaintext highlighter-rouge">break</code>는 반복문을 강제로 빠져나갈 때 사용한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">coffee</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">money</span> <span class="o">=</span> <span class="mi">300</span>
+
+<span class="k">while</span> <span class="n">money</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">돈을 받았으니 커피를 줍니다.</span><span class="sh">"</span><span class="p">)</span>
+    <span class="n">coffee</span> <span class="o">=</span> <span class="n">coffee</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">남은 커피는 %d개입니다.</span><span class="sh">"</span> <span class="o">%</span> <span class="n">coffee</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">coffee</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">커피가 모두 떨어졌습니다. 판매를 중지합니다.</span><span class="sh">"</span><span class="p">)</span>
+        <span class="k">break</span>
+</code></pre></div></div>
+
+<p>위 예제는 커피 개수가 <code class="language-plaintext highlighter-rouge">0</code>이 되면 <code class="language-plaintext highlighter-rouge">break</code>를 만나 반복문을 종료한다.</p>
+
+<h2 id="9-continue">9. <code class="language-plaintext highlighter-rouge">continue</code></h2>
+
+<p><code class="language-plaintext highlighter-rouge">continue</code>는 반복문을 완전히 끝내지는 않고, 반복문의 처음으로 돌아가 다음 반복을 진행한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">1</span>
+
+    <span class="k">if</span> <span class="n">a</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">continue</span>
+
+    <span class="nf">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>위 코드는 짝수일 때 <code class="language-plaintext highlighter-rouge">continue</code>를 만나 <code class="language-plaintext highlighter-rouge">print(a)</code>를 건너뛰기 때문에 홀수만 출력한다.</p>
+
+<h2 id="10-무한-루프">10. 무한 루프</h2>
+
+<p>무한 루프는 끝없이 반복되는 반복문이다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="n">실행할</span> <span class="n">문장</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">while True</code>는 조건이 항상 참이기 때문에 직접 멈추지 않으면 계속 실행된다. 보통 <code class="language-plaintext highlighter-rouge">break</code>와 함께 사용한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="n">answer</span> <span class="o">=</span> <span class="nf">input</span><span class="p">(</span><span class="sh">"</span><span class="s">종료하려면 q를 입력하세요: </span><span class="sh">"</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">answer</span> <span class="o">==</span> <span class="sh">"</span><span class="s">q</span><span class="sh">"</span><span class="p">:</span>
+        <span class="k">break</span>
+</code></pre></div></div>
+
+<h2 id="11-for문">11. <code class="language-plaintext highlighter-rouge">for</code>문</h2>
+
+<p><code class="language-plaintext highlighter-rouge">for</code>문은 리스트, 튜플, 문자열 같은 자료형에서 값을 하나씩 꺼내 반복한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">변수</span> <span class="ow">in</span> <span class="n">리스트</span> <span class="n">또는</span> <span class="n">튜플</span> <span class="n">또는</span> <span class="n">문자열</span><span class="p">:</span>
+    <span class="n">실행할</span> <span class="n">문장</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">test_list</span> <span class="o">=</span> <span class="p">[</span><span class="sh">"</span><span class="s">one</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">two</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">three</span><span class="sh">"</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">test_list</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>리스트의 값이 순서대로 <code class="language-plaintext highlighter-rouge">i</code>에 들어가며 반복된다.</p>
+
+<h2 id="12-for문-활용-예제">12. <code class="language-plaintext highlighter-rouge">for</code>문 활용 예제</h2>
+
+<p>학생들의 점수를 리스트로 저장하고, 각 학생의 합격 여부를 출력할 수 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">marks</span> <span class="o">=</span> <span class="p">[</span><span class="mi">90</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">67</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">80</span><span class="p">]</span>
+
+<span class="n">number</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">mark</span> <span class="ow">in</span> <span class="n">marks</span><span class="p">:</span>
+    <span class="n">number</span> <span class="o">=</span> <span class="n">number</span> <span class="o">+</span> <span class="mi">1</span>
+
+    <span class="k">if</span> <span class="n">mark</span> <span class="o">&gt;=</span> <span class="mi">60</span><span class="p">:</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">%d번 학생은 합격입니다.</span><span class="sh">"</span> <span class="o">%</span> <span class="n">number</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">%d번 학생은 불합격입니다.</span><span class="sh">"</span> <span class="o">%</span> <span class="n">number</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>반복문 안에서도 <code class="language-plaintext highlighter-rouge">if</code>문을 함께 사용할 수 있다.</p>
+
+<h2 id="13-for문과-continue">13. <code class="language-plaintext highlighter-rouge">for</code>문과 <code class="language-plaintext highlighter-rouge">continue</code></h2>
+
+<p><code class="language-plaintext highlighter-rouge">continue</code>는 <code class="language-plaintext highlighter-rouge">for</code>문에서도 사용할 수 있다. 조건에 맞는 경우 현재 반복의 나머지 문장을 건너뛰고 다음 반복으로 넘어간다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">marks</span> <span class="o">=</span> <span class="p">[</span><span class="mi">90</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">67</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">80</span><span class="p">]</span>
+
+<span class="n">number</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">mark</span> <span class="ow">in</span> <span class="n">marks</span><span class="p">:</span>
+    <span class="n">number</span> <span class="o">=</span> <span class="n">number</span> <span class="o">+</span> <span class="mi">1</span>
+
+    <span class="k">if</span> <span class="n">mark</span> <span class="o">&lt;</span> <span class="mi">60</span><span class="p">:</span>
+        <span class="k">continue</span>
+
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">%d번 학생 축하합니다. 합격입니다.</span><span class="sh">"</span> <span class="o">%</span> <span class="n">number</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>위 코드는 60점 미만 학생은 출력하지 않고 넘어간다.</p>
+
+<h2 id="14-range-함수">14. <code class="language-plaintext highlighter-rouge">range()</code> 함수</h2>
+
+<p><code class="language-plaintext highlighter-rouge">range()</code>는 숫자 범위를 만들어 주는 함수이다. <code class="language-plaintext highlighter-rouge">for</code>문과 함께 자주 사용한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="nf">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>  <span class="c1"># range(0, 10)
+</span></code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">range(10)</code>은 <code class="language-plaintext highlighter-rouge">0</code>부터 <code class="language-plaintext highlighter-rouge">10</code> 미만까지의 숫자를 의미한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>시작 숫자와 끝 숫자를 직접 지정할 수도 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>끝 숫자는 포함되지 않는다.</p>
+
+<h2 id="15-range-활용-예제">15. <code class="language-plaintext highlighter-rouge">range()</code> 활용 예제</h2>
+
+<p><code class="language-plaintext highlighter-rouge">range()</code>를 사용해 1부터 10까지의 합을 구할 수 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">add</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
+    <span class="n">add</span> <span class="o">=</span> <span class="n">add</span> <span class="o">+</span> <span class="n">i</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">add</span><span class="p">)</span>  <span class="c1"># 55
+</span></code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">for</code>문에서도 <code class="language-plaintext highlighter-rouge">break</code>를 사용해 반복문을 강제로 종료할 수 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="k">break</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>위 코드는 <code class="language-plaintext highlighter-rouge">i</code>가 <code class="language-plaintext highlighter-rouge">5</code>가 되면 반복문이 종료되므로 <code class="language-plaintext highlighter-rouge">0</code>부터 <code class="language-plaintext highlighter-rouge">4</code>까지만 출력된다.</p>
+
+<h2 id="16-함수">16. 함수</h2>
+
+<p>함수는 특정 기능을 수행하는 코드 묶음이다. 필요한 값을 입력받고, 처리한 결과를 반환할 수 있다.</p>
+
+<p>기본 형태는 다음과 같다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">함수이름</span><span class="p">(</span><span class="n">매개변수</span><span class="p">):</span>
+    <span class="n">실행할</span> <span class="n">문장</span>
+    <span class="k">return</span> <span class="n">반환값</span>
+</code></pre></div></div>
+
+<p>예를 들어 두 수를 더하는 함수는 다음과 같이 만들 수 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="nf">add</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>  <span class="c1"># 7
+</span></code></pre></div></div>
+
+<p>여기서 <code class="language-plaintext highlighter-rouge">a</code>, <code class="language-plaintext highlighter-rouge">b</code>는 함수에 전달되는 값이고, <code class="language-plaintext highlighter-rouge">return</code>은 함수의 결과를 돌려주는 역할을 한다.</p>
+
+<h2 id="핵심-정리">핵심 정리</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">if</code>문은 조건에 따라 실행할 코드를 선택한다.</li>
+  <li><code class="language-plaintext highlighter-rouge">elif</code>는 여러 조건을 추가할 때 사용하고, <code class="language-plaintext highlighter-rouge">else</code>는 모든 조건이 거짓일 때 실행된다.</li>
+  <li><code class="language-plaintext highlighter-rouge">while</code>문은 조건이 참인 동안 반복한다.</li>
+  <li><code class="language-plaintext highlighter-rouge">for</code>문은 리스트, 튜플, 문자열 등의 값을 하나씩 꺼내 반복한다.</li>
+  <li><code class="language-plaintext highlighter-rouge">break</code>는 반복문을 종료하고, <code class="language-plaintext highlighter-rouge">continue</code>는 다음 반복으로 넘어간다.</li>
+  <li><code class="language-plaintext highlighter-rouge">range()</code>는 숫자 범위를 만들어 <code class="language-plaintext highlighter-rouge">for</code>문에서 자주 사용한다.</li>
+  <li>함수는 반복해서 사용할 기능을 하나로 묶어 놓은 코드이다.</li>
+</ul>
+
+        </main>
+        <div class="navigation-col sidebar-col d-none d-xl-block">
+          
+
+
+
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer d-flex flex-items-center text-center bg-gray-light text-gray">
+  <div class="container-xl">
+    <a href="https://github.com/Muroi6666/Muroi6666.github.io">Dongyoung Study Log</a>
+    is maintained by
+    <a href="https://github.com/Muroi6666">Muroi6666</a>.
+  </div>
+</footer>
+
+
+    <script src="/assets/js/app.js"></script>
+    <script>anchors.add();</script>
+    
+  </body>
+</html>
