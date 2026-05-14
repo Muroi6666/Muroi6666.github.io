@@ -37,6 +37,13 @@ title: Dongyoung Study Log
   </div>
 </a>
 
+<a href="./csharp" style="text-decoration:none;">
+  <div style="background:#eef2f5; padding:20px; border-radius:8px;">
+    <h3 style="margin-top:0;">C#</h3>
+    <p>C# 문법과 객체지향 프로그래밍 내용을 정리합니다.</p>
+  </div>
+</a>
+
 <a href="./search.html" style="text-decoration:none;">
   <div style="background:#eef2f5; padding:20px; border-radius:8px;">
     <h3 style="margin-top:0;">Search</h3>
