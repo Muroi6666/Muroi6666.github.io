@@ -2,3 +2,6 @@
 *.obj
 *.ilk
 *.pdb
+.env
+.env.*
+!.env.example

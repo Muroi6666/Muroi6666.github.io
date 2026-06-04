@@ -12,3 +12,11 @@ plugins:
 
 markdown: kramdown
 highlighter: rouge
+
+exclude:
+  - lang_chain/langchain.py
+  - lang_chain/requirements.txt
+  - lang_chain/data
+  - lang_chain/data-20260528T021220Z-3-001.zip
+  - lang_chain/.env
+  - lang_chain/.env.*

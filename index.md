@@ -44,6 +44,13 @@ title: Dongyoung Study Log
   </div>
 </a>
 
+<a href="./lang_chain" style="text-decoration:none;">
+  <div style="background:#eef2f5; padding:20px; border-radius:8px;">
+    <h3 style="margin-top:0;">LangChain</h3>
+    <p>인공지능프로그래밍 기초 과목의 LangChain과 RAG 실습을 정리합니다.</p>
+  </div>
+</a>
+
 <a href="./search.html" style="text-decoration:none;">
   <div style="background:#eef2f5; padding:20px; border-radius:8px;">
     <h3 style="margin-top:0;">Search</h3>
@@ -77,6 +84,10 @@ GitHub
 
 <span style="background:#fee2e2; padding:10px 16px; border-radius:999px; font-weight:bold;">
 Arduino
+</span>
+
+<span style="background:#e0f2fe; padding:10px 16px; border-radius:999px; font-weight:bold;">
+LangChain
 </span>
 
 </div>
