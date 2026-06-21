@@ -51,6 +51,20 @@ title: Dongyoung Study Log
   </div>
 </a>
 
+<a href="./US_Learning&amp;tree" style="text-decoration:none;">
+  <div style="background:#eef2f5; padding:20px; border-radius:8px;">
+    <h3 style="margin-top:0;">Machine Learning</h3>
+    <p>랜덤포레스트, KMeans, DBSCAN 머신러닝 실습을 정리합니다.</p>
+  </div>
+</a>
+
+<a href="./기말고사실습" style="text-decoration:none;">
+  <div style="background:#eef2f5; padding:20px; border-radius:8px;">
+    <h3 style="margin-top:0;">기말고사실습</h3>
+    <p>5개 feature 선택, 모델 학습, 최적 모델 저장, 테스트 예측 실습입니다.</p>
+  </div>
+</a>
+
 <a href="./search.html" style="text-decoration:none;">
   <div style="background:#eef2f5; padding:20px; border-radius:8px;">
     <h3 style="margin-top:0;">Search</h3>
@@ -88,6 +102,10 @@ Arduino
 
 <span style="background:#e0f2fe; padding:10px 16px; border-radius:999px; font-weight:bold;">
 LangChain
+</span>
+
+<span style="background:#fce7f3; padding:10px 16px; border-radius:999px; font-weight:bold;">
+Machine Learning
 </span>
 
 </div>

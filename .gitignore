@@ -5,3 +5,13 @@
 .env
 .env.*
 !.env.example
+
+# Jekyll build output
+_site/
+.jekyll-cache/
+
+# Large local datasets and generated model outputs
+**/creditcard.csv
+*.joblib
+predictions.csv
+__pycache__/
