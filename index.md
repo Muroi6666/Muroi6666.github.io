@@ -65,6 +65,13 @@ title: Dongyoung Study Log
   </div>
 </a>
 
+<a href="./finalTest_P" style="text-decoration:none;">
+  <div style="background:#eef2f5; padding:20px; border-radius:8px;">
+    <h3 style="margin-top:0;">Final Test Practice</h3>
+    <p>학생 학습 습관 데이터로 합격 여부를 예측한 최종 실습 결과입니다.</p>
+  </div>
+</a>
+
 <a href="./search.html" style="text-decoration:none;">
   <div style="background:#eef2f5; padding:20px; border-radius:8px;">
     <h3 style="margin-top:0;">Search</h3>
